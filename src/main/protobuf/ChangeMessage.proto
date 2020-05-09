@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package changemessage;
+
+option java_package = "com.app.protobuf.change";
+option optimize_for = SPEED;
+
+message ChangeMessage {
+  required uint64 id = 1;
+  required string changeFrom = 2;
+  required string changeTo = 3;
+  optional ChangeMessageMode mode = 4 [default = Normal];
+}
+
+enum ChangeMessageMode {
+  Normal = 1;
+  Other = 2;
+}
