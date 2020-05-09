@@ -9,7 +9,13 @@ message ChangeMessage {
   required uint64 id = 1;
   required string changeFrom = 2;
   required string changeTo = 3;
-  optional ChangeMessageMode mode = 4 [default = Normal];
+  required MessageType mType = 4;
+  optional ChangeMessageMode mode = 5 [default = Normal];
+}
+
+message MessageType {
+  required uint64 id = 1;
+  required string value = 2;
 }
 
 enum ChangeMessageMode {
